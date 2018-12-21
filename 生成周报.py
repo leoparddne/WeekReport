@@ -196,7 +196,7 @@ for line in f:
                 worksheet.write(i, end, label = now.strftime("%Y-%m-%d"),style=styleCommon)
                 worksheet.write(i, statu, label = "完成",style=styleCommon)
                 worksheet.write(i, backup, label = "",style=styleCommon)
-                print now.strftime("%Y-%m-%d") +"***"+line
+                print now.strftime("%Y-%m-%d") +"***"+line.decode('utf-8').encode('cp936')
                 i=i+1
                 count=count+1
     #print strTime
