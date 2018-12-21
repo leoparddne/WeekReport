@@ -5,7 +5,7 @@
 #import time
 import datetime
 import xlwt
-
+username="张三"
 now=datetime.datetime.now()
 workbook=xlwt.Workbook(encoding='utf-8')
 worksheet = workbook.add_sheet('Sheet1')
@@ -148,7 +148,7 @@ styleCommon.font=fontx
 styleCommon.alignment = al
 #模板内容
 worksheet.write_merge(0, 0,0,12, label = "产品开发部工作周报",style=stylefirstRow)
-worksheet.write_merge(1, 1,5,7, label = "张三",style=stylesecondRow)
+worksheet.write_merge(1, 1,5,7, label = username,style=stylesecondRow)
 worksheet.write_merge(2, 2,0,12, label = "注：每周五时做本周工作总结（关表），同时做下周工作计划（开表），必要时下周一调整；",style=style3Row)
 worksheet.write(3, context, label = "内容",style=styleGrayRow)
 worksheet.write(3, ids, label = "序号",style=styleGrayRow)
@@ -202,4 +202,5 @@ for line in f:
     #print strTime
 worksheet.write_merge(4, count+4-2,0,0, label = "本周工作总结",style=styleLightGreenRow)
 f.close()
-workbook.save(r"C:\Users\Dell\Desktop\\"+"产品开发周报_张三_".decode('utf-8').encode('cp936')+datetime.datetime.now().strftime("%Y_%m_%d")+".xlsx")
+file="产品开发周报_"+username+"_"
+workbook.save(r"C:\Users\Dell\Desktop\\"+file.decode('utf-8').encode('cp936')+datetime.datetime.now().strftime("%Y_%m_%d")+".xlsx")
